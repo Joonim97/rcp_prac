@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game - History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>게임 전적</h1>
+    <p>승: {{ win_count }} | 무: {{ draw_count }} | 패: {{ lose_count }}</p>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>사용자</th>
+            <th>컴퓨터</th>
+            <th>결과</th>
+        </tr>
+        {% for game in games %}
+        <tr>
+            <td>{{ game.id }}</td>
+            <td>{{ game.user_choice }}</td>
+            <td>{{ game.computer_choice }}</td>
+            <td>{{ game.result }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">메인 화면으로</a>
+</body>
+</html>

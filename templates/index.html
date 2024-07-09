@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>가위 바위 보 게임</h1>
+    <form action="{{ url_for('play') }}" method="post">
+        <label for="choice">선택하세요:</label>
+        <select name="choice" id="choice">
+            <option value="가위">가위</option>
+            <option value="바위">바위</option>
+            <option value="보">보</option>
+        </select>
+        <button type="submit">플레이</button>
+    </form>
+    <a href="{{ url_for('history') }}">전적 보기</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>결과</h1>
+    <p>사용자: {{ user_choice }}</p>
+    <p>컴퓨터: {{ computer_choice }}</p>
+    <p>결과: {{ result }}</p>
+    <a href="{{ url_for('index') }}">다시 플레이</a>
+    <a href="{{ url_for('history') }}">전적 보기</a>
+</body>
+</html>
